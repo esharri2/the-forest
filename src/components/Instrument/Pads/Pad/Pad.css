@@ -1,0 +1,33 @@
+.pad {
+    width: 150px;
+    height: 150px;
+    margin: 2px;
+}
+
+.pad .play {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* border: 20px solid black; */
+    background-color: black;
+}
+
+.pad .play:focus {
+    outline: 0;
+}
+
+.play.off {
+    border: 4px solid #0A0908;
+}
+
+.play.on {
+    background-color: #f000ff;
+}
+
+.plug.on {
+    background-color: yellow;
+}
+
+.plug.off {
+    background: white;
+}

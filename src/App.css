@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Flamenco|Germania+One|Megrim|Pirata+One|Spirax|UnifrakturCook:700|UnifrakturMaguntia");
+
+
+#wrapper {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  width:100vw;
+  height:100vh;
+}
