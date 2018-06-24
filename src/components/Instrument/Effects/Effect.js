@@ -10,12 +10,16 @@ class Effect extends Component {
 
     render() {
 
-        const {name, value} = this.props;
-
+        const { name, value } = this.props;
+        let on = false;
+        if (value > 0) {
+            on = true;
+        }
         return (
-            <div className={name}>
+            <div className={`effect ${name} ${on ? 'on' : null}`}>
                 <label htmlFor={name}>{name}</label>
                 <input
+                    className="range"
                     onChange={this.handleChange}
                     type="range"
                     min="0"

@@ -1,46 +1,65 @@
 .pad {
-    width: 150px;
+    width: 120px;
     margin: 2px;
-    display:flex;
+    display: flex;
     flex-direction: column;
+    padding: 10px 20px;
 }
 
-.pad .play {
-    width: 50px;
-    height: 50px;
-    font-size:40px;
+.play {
+    width: 100%;
+    /* height: 50px; */
+    font-size: 40px;
     background: none;
     border: none;
     font-family: 'Megrim', sans-serif;
+    color: #222120;
 }
 
-.pad .play:focus {
+.play:focus {
     outline: 0;
+    color:#4e4d4c;    
 }
 
-.play.off {
-   color: #222120
-}
+
 
 .play.on {
-   color: #f000ff;
+    color: #f000ff;
 }
 
-.plug.on {
-    background-color: yellow;
-}
-
-.plug.off {
-    background: white;
-}
-
-.rate, .volume {
-    display:flex;
-    padding:3px 0;
-    justify-content:space-between;
+.rate,
+.volume {
+    display: flex;
+    padding: 3px 0;
+    justify-content: space-between;
 }
 
 .pad label {
-   width:4em;
-   display:block;
+    width: 4em;
+    display: block;
+}
+
+.plug {
+    border: none;
+    border-radius: 50px;
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #222120;
+    background: none;
+    /* background-color:non; */
+    /* text-decoration: none; */
+}
+
+.plug:focus {
+    outline:0;
+    border-color:#4e4d4c;
+}
+
+.plug.on {
+    background: #74ee15
+}
+
+.loader {
+    font-size:35px;
 }

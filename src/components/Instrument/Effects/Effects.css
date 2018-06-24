@@ -1,5 +1,18 @@
 .effects {
-    background-color: blue;
-    flex-grow:1;
-    height:90%;
+    /* background-color:darkgray; */
+    flex-grow: 1;
+    min-width: 200px;
+    height: 70%;
+    overflow-y:auto;
 }
+
+.effect {
+    padding:0 5px;
+    margin-top:10px;
+    border-left: 1px solid #222120;
+}
+
+.effect.on {
+    border-left-color: #74ee15;
+}
+

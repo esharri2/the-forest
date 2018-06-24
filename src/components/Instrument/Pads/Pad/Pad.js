@@ -12,7 +12,8 @@ class Pad extends Component {
         playing: false,
         plugged: false,
         loopRate: 4,
-        volume: -5
+        volume: -5,
+        loaded: false,
     }
 
     componentDidMount() {
@@ -21,11 +22,26 @@ class Pad extends Component {
             "url": this.props.url,
             "loop": true,
             "loopStart": 0,
-            "loopEnd": 4
+            "loopEnd": 4.,
+            "onload": this.loaded
         })
+
+        // this.player.buffer.on("load", function() {alert("hi")})
+
+        // Tone.Master.playBackRate = 25
+
+        Tone.Buffer.onload = function () {
+            this.loaded()
+        };
+
         this.volume = new Tone.Volume(this.state.volume)
         this.distortion = new Tone.BitCrusher(10);
-        this.player.chain(this.distortion, this.volume, Tone.Master);
+        this.reverb = new Tone.JCReverb(0);
+        this.player.chain(this.distortion, this.reverb, this.volume, Tone.Master);
+    }
+
+    loaded = () => {
+        this.setState({ loaded: true })
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -54,21 +70,56 @@ class Pad extends Component {
             if (prevfx.distortion !== fx.distortion || !prevState.plugged) {
                 this.setDistortion(fx.distortion);
             }
+            if (prevfx.reverb !== fx.reverb || !prevState.plugged) {
+                this.setReverb(fx.reverb);
+            }
+            if (prevfx.slow !== fx.slow || !prevState.plugged) {
+                this.setSlow(fx.slow);
+            }
+
+            if (prevfx.speed !== fx.speed || !prevState.plugged) {
+                this.setSpeed(fx.speed);
+            }
         }
 
 
     }
 
     setDistortion = (val) => {
+        console.log(val)
         const min = 10;
         const max = 1;
-        if (val === min) {
-            this.distortion.wet = 0;
+        if (val === 0) {
+            this.distortion.wet.value = 0;
         } else {
             this.distortion.wet.value = 1;
-            this.distortion.bits = this.scale(val, 10, 1);
+            this.distortion.bits = this.scale(val, min, max);
         }
     }
+
+    setReverb = (val) => {
+        const min = 0;
+        const max = .8;
+        if (val === 0) {
+            this.reverb.wet.value = 0;
+        } else {
+            this.reverb.wet.value = 1;
+            this.reverb.roomSize.value = this.scale(val, min, max);
+        }
+    }
+
+    setSlow = (val) => {
+        const min = 1;
+        const max = .1;
+        this.player.playbackRate = this.scale(val, min, max);
+    }
+
+    setSpeed = (val) => {
+        const min = 1;
+        const max = 2;
+        this.player.playbackRate = this.scale(val, min, max);
+    }
+
 
 
     play = () => {
@@ -94,24 +145,27 @@ class Pad extends Component {
     }
 
     render() {
+
         return (
             <div className="pad">
                 <Play
                     play={this.play}
+                    loaded={this.state.loaded}
                     letter={this.props.letter}
                     playing={this.state.playing} />
-                <Plug
-                    plugged={this.state.plugged}
-                    plug={this.plug} />
                 <Rate
                     loopRate={this.state.loopRate}
                     handleChange={this.handleChange} />
                 <Volume
                     volume={this.state.volume}
                     handleChange={this.handleChange} />
-
+                <Plug
+                    plugged={this.state.plugged}
+                    plug={this.plug} />
             </div>
         )
+
+
     }
 }
 

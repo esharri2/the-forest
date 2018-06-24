@@ -8,6 +8,8 @@ class Instrument extends Component {
     state = {
         distortion: 0,
         reverb: 0,
+        speed: 0,
+        slow: 0
     }
 
     updateEffect = (effect, value) => {
