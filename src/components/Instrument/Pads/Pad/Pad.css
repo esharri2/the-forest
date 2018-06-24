@@ -1,15 +1,17 @@
 .pad {
     width: 150px;
-    height: 150px;
     margin: 2px;
+    display:flex;
+    flex-direction: column;
 }
 
 .pad .play {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    /* border: 20px solid black; */
-    background-color: black;
+    font-size:40px;
+    background: none;
+    border: none;
+    font-family: 'Megrim', sans-serif;
 }
 
 .pad .play:focus {
@@ -17,11 +19,11 @@
 }
 
 .play.off {
-    border: 4px solid #0A0908;
+   color: #222120
 }
 
 .play.on {
-    background-color: #f000ff;
+   color: #f000ff;
 }
 
 .plug.on {
@@ -30,4 +32,15 @@
 
 .plug.off {
     background: white;
+}
+
+.rate, .volume {
+    display:flex;
+    padding:3px 0;
+    justify-content:space-between;
+}
+
+.pad label {
+   width:4em;
+   display:block;
 }

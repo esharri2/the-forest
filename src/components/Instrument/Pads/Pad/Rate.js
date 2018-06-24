@@ -7,14 +7,21 @@ class Rate extends Component {
     }
 
     render() {
-        return <input
-            onChange={this.handleChange}
-            type="range"
-            min="0"
-            max="10"
-            step=".1"
-            name="loopRate"
-            value={this.props.loopRate} />
+        return (
+            <div className="rate">
+                <label htmlFor="volume">Rate</label>
+                <input
+                    className='range'
+                    onChange={this.handleChange}
+                    type="range"
+                    min="0"
+                    max="10"
+                    step=".1"
+                    name="loopRate"
+                    id="rate"
+                    value={this.props.loopRate} />
+            </div>
+        )
     }
 }
 

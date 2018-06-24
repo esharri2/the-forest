@@ -7,14 +7,21 @@ class Volume extends Component {
     }
 
     render() {
-        return <input
-            onChange={this.handleChange}
-            type="range"
-            min="-40"
-            max="10"
-            step=".1"
-            name="volume"
-            value={this.props.volume} />
+        return (
+            <div className="volume">
+                <label htmlFor="volume">Vol</label>
+                <input
+                    className="range"
+                    onChange={this.handleChange}
+                    type="range"
+                    min="-40"
+                    max="10"
+                    step=".1"
+                    id="volume"
+                    name="volume"
+                    value={this.props.volume} />
+            </div>
+        )
     }
 }
 

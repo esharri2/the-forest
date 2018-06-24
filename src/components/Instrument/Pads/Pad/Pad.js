@@ -12,7 +12,7 @@ class Pad extends Component {
         playing: false,
         plugged: false,
         loopRate: 4,
-        volume: -15
+        volume: -5
     }
 
     componentDidMount() {
@@ -23,8 +23,9 @@ class Pad extends Component {
             "loopStart": 0,
             "loopEnd": 4
         })
+        this.volume = new Tone.Volume(this.state.volume)
         this.distortion = new Tone.BitCrusher(10);
-        this.player.chain(this.distortion, Tone.Master);
+        this.player.chain(this.distortion, this.volume, Tone.Master);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -42,7 +43,7 @@ class Pad extends Component {
 
         //Vol change check
         if (prevState.volume !== this.state.volume) {
-            this.player.volume.value = parseFloat(this.state.volume);
+            this.volume.volume.value = parseFloat(this.state.volume);
         }
 
         //If plugged in, update effects
@@ -67,8 +68,6 @@ class Pad extends Component {
             this.distortion.wet.value = 1;
             this.distortion.bits = this.scale(val, 10, 1);
         }
-
-
     }
 
 
@@ -91,7 +90,6 @@ class Pad extends Component {
     scale = (val, min, max) => {
         const percentage = val / 100;
         const scaledVal = min + ((max - min) * percentage);
-        console.log(scaledVal);
         return scaledVal;
     }
 
@@ -100,16 +98,18 @@ class Pad extends Component {
             <div className="pad">
                 <Play
                     play={this.play}
+                    letter={this.props.letter}
                     playing={this.state.playing} />
+                <Plug
+                    plugged={this.state.plugged}
+                    plug={this.plug} />
                 <Rate
                     loopRate={this.state.loopRate}
                     handleChange={this.handleChange} />
                 <Volume
                     volume={this.state.volume}
                     handleChange={this.handleChange} />
-                <Plug
-                    plugged={this.state.plugged}
-                    plug={this.plug} />
+
             </div>
         )
     }

@@ -13,10 +13,8 @@
     position:absolute;
     left: 0; 
     right: 0; 
-  /*   margin-left: auto; 
-    margin-right: auto;  */
     text-transform:uppercase;
-    font-family: 'UnifrakturMaguntia', sans-serif;
+    font-family: 'Megrim', sans-serif;
     font-size:10vw;  
   }
   

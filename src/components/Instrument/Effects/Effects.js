@@ -15,7 +15,7 @@ const Effects = props => {
         )
     }
 
-    return effects;
+    return <div className="effects">{effects}</div>;
 
 }
 
