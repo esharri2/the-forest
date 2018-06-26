@@ -114,7 +114,6 @@ class Pad extends Component {
     }
 
     setDistortion = (val) => {
-        console.log(val)
         const min = 10;
         const max = 1;
         if (val === 0) {
@@ -140,7 +139,6 @@ class Pad extends Component {
         const min = 1;
         const max = .1;
         this.player.playbackRate = this.scale(val, min, max);
-        console.log(this.player.playbackRate)
     }
 
     setSpeed = (val) => {
