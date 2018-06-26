@@ -9,7 +9,7 @@ class Rate extends Component {
     render() {
         return (
             <div className="rate">
-                <label htmlFor="volume">Rate</label>
+                <label htmlFor="volume">Len</label>
                 <input
                     className='range'
                     onChange={this.handleChange}

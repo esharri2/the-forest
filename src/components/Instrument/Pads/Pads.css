@@ -2,5 +2,6 @@
     display:flex;
     justify-content:center;
     flex-wrap:wrap; 
-    width:90vw;        
+    width:90vw;      
+    overflow-y:auto;  
 }

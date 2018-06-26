@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Effect from './Effect'
 import './Effects.css'
 

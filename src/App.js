@@ -7,7 +7,7 @@ import Instrument from './components/Instrument'
 class App extends Component {
 
   state = {
-    showSplash: true
+    showSplash: false
   }
 
   toggleSplash = () => {
