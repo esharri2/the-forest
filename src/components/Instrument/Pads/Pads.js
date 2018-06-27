@@ -1,20 +1,30 @@
 import React, { Component } from 'react';
-import Pad from "./Pad"
-import "./Pads.css"
+import Pad from "./Pad";
+import "./Pads.css";
+import sound1 from './sound-files/1.wav';
+import sound2 from './sound-files/2.wav';
+import sound3 from './sound-files/3.wav';
+import sound4 from './sound-files/4.wav';
+import sound5 from './sound-files/5.wav';
+import sound6 from './sound-files/6.wav';
+import sound7 from './sound-files/7.wav';
+import sound8 from './sound-files/8.wav';
+import sound9 from './sound-files/9.wav';
+
 
 
 class Pads extends Component {
     state = {
         pads: [
-            { letter: "A", name:"night insects", url: "http://bbcsfx.acropolis.org.uk/assets/07053042.wav" },
-            { letter: "B", name:"tweety bird", url: "http://bbcsfx.acropolis.org.uk/assets/07074114.wav" },
-            { letter: "C", name:"forest insect", url: "http://bbcsfx.acropolis.org.uk/assets/00008089.wav" },
-            { letter: "D", name:"cave water", url: "http://bbcsfx.acropolis.org.uk/assets/07072023.wav" },
-            { letter: "E", name:"spring birds", url: "http://bbcsfx.acropolis.org.uk/assets/07074106.wav" },
-            { letter: "F", name:"elephants", url: "http://bbcsfx.acropolis.org.uk/assets/07062088.wav" },
-            { letter: "G", name:"howling", url: "http://bbcsfx.acropolis.org.uk/assets/07074100.wav" },
-            { letter: "H", name:"chimps", url: "http://bbcsfx.acropolis.org.uk/assets/07062023.wav" },
-            { letter: "I", name:"thunder", url: "http://bbcsfx.acropolis.org.uk/assets/07043390.wav" }
+            { letter: "A", name:"night insects", url: sound1 },
+            { letter: "B", name:"tweety bird", url: sound2 },
+            { letter: "C", name:"forest insect", url: sound3 },
+            { letter: "D", name:"cave water", url: sound4 },
+            { letter: "E", name:"spring birds", url: sound5 },
+            { letter: "F", name:"elephants", url: sound6 },
+            { letter: "G", name:"howling", url: sound7 },
+            { letter: "H", name:"chimps", url: sound8 },
+            { letter: "I", name:"thunder", url: sound9 }
         ]
     }
 
