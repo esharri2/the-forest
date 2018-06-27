@@ -38,15 +38,15 @@ class Pad extends Component {
         });
         this.phase = new Tone.Phaser(0);
         this.delay = new Tone.PingPongDelay(0);
-        this.wave = new Tone.Vibrato({
-            maxDelay: .4,
-            frequency: 0,
-            depth: 3,
-            type: 'triangle'
-        });
+        // this.wave = new Tone.Vibrato({
+        //     maxDelay: .4,
+        //     frequency: 0,
+        //     depth: 3,
+        //     type: 'triangle'
+        // });
 
 
-        const effects = [this.distortion, this.reverb, this.vibrato, this.phase, this.delay, this.wave]
+        const effects = [this.distortion, this.reverb, this.vibrato, this.phase, this.delay/*, this.wave*/]
 
         effects.forEach(effect => {
             effect.wet.value = 0;
@@ -104,9 +104,9 @@ class Pad extends Component {
             if (prevfx.delay !== fx.delay || !prevState.plugged) {
                 this.setDelay(fx.delay);
             }
-            if (prevfx.wave !== fx.wave || !prevState.plugged) {
-                this.setWave(fx.wave);
-            }
+            // if (prevfx.wave !== fx.wave || !prevState.plugged) {
+            //     this.setWave(fx.wave);
+            // }
 
         }
 
