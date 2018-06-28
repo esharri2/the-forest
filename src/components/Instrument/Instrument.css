@@ -11,8 +11,39 @@
 }
 
 button {
-    cursor:pointer;
+    cursor: pointer;
 }
+
+input[type=range] {
+    -webkit-appearance: none;
+    /* Hides the slider so that custom slider can be made */
+    width: 100%;
+    /* Specific width is required for Firefox. */
+    background: transparent;
+    /* Otherwise white in Chrome */
+}
+
+/*Range reset*/
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+    /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+/*End range reset*/
 
 .range {
     -webkit-appearance: none;
@@ -20,16 +51,27 @@ button {
     height: 10px;
     background: #222120;
     outline: none;
+    box-sizing:border-box;
 }
 
 .range:focus {
     background: #4e4d4c;
-
 }
 
 .range::-webkit-slider-runnable-track {
     cursor: pointer;
+    background: #222120;
     /* background-color:#222120; */
+}
+
+.range::-moz-range-track {
+    cursor: pointer;
+    background: #222120;
+}
+
+.range::-ms-track {
+    cursor: pointer;
+    background: #222120;
 }
 
 .range::-webkit-slider-thumb {
@@ -41,7 +83,20 @@ button {
     cursor: pointer;
 }
 
-/*
-input[type=range]::-moz-range-track {
-    background: pink;
-} */
+.range::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 10px;
+    background: #e5e5e5;
+    cursor: pointer;
+}
+
+.range::-ms-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 10px;
+    background: #e5e5e5;
+    cursor: pointer;
+}
