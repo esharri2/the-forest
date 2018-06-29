@@ -1,7 +1,7 @@
 #instrument {
     width: 95vw;
     height: 95vh;
-    max-width: 800px;
+ 
     display: flex;
     justify-content: center;
     align-items: center;

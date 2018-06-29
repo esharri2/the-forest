@@ -8,9 +8,13 @@ The sound comes from wav files found at [BBC Sound Effects](http://bbcsfx.acropo
 
 You just need to `yarn install` and `yarn start` to run this app locally.
 
+Sound files are located in `src/components/Instrument/Pads`.
+
+Effects are initiated and modified in the `Pad` component.
+
 ### Prerequisites
 
-This project requirse Node.js and Yarn Package Manager.
+This project requires Node.js and Yarn Package Manager.
 
 ## Deployment
 
@@ -19,7 +23,7 @@ Use `yarn build` to create production files.
 ## Built With
 
 * [Tone.js](https://tonejs.github.io/) - A web framework for creating music in the browser
-* [Create React App](https://github.com/facebook/create-react-app) - Dependency Management
+* [Create React App](https://github.com/facebook/create-react-app)
 
 ## Authors
 
