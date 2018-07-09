@@ -4,7 +4,7 @@
     flex-wrap:wrap; 
     width:90vw;  
     height:90vh; 
-    max-width: 700px;
+    max-width: 650px;
     max-height:500px;      
     overflow-y:auto;  
 }
